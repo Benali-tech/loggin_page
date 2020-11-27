@@ -1,0 +1,100 @@
+package newProject;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JCheckBox;
+import javax.swing.JRadioButton;
+import javax.swing.JPasswordField;
+import javax.swing.JSeparator;
+import javax.swing.JTextField;
+
+public class AlteProject {
+
+	private JFrame frame;
+	private JPasswordField passwordField;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AlteProject window = new AlteProject();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public AlteProject() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(Color.GRAY);
+		frame.setBounds(100, 100, 549, 452);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JButton button1 = new JButton("LOGIN");
+		button1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				JOptionPane.showMessageDialog(null, "Hello to Mein project");
+			}
+		});
+		button1.setFont(new Font("Tahoma", Font.BOLD, 20));
+		button1.setBounds(141, 339, 217, 51);
+		frame.getContentPane().add(button1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		comboBox.setBounds(27, 53, 138, 45);
+		frame.getContentPane().add(comboBox);
+		
+		JLabel lblNewLabel = new JLabel("THIS IS MY GUI ");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 23));
+		lblNewLabel.setBounds(227, 69, 271, 29);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("Save Password");
+		chckbxNewCheckBox.setBounds(28, 165, 109, 23);
+		frame.getContentPane().add(chckbxNewCheckBox);
+		
+		passwordField = new JPasswordField();
+		passwordField.setBounds(141, 299, 217, 29);
+		frame.getContentPane().add(passwordField);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(53, 235, 433, 2);
+		frame.getContentPane().add(separator);
+		
+		textField = new JTextField();
+		textField.setBounds(141, 259, 217, 29);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+	}
+}
